@@ -2,7 +2,7 @@ import unittest
 import asyncio
 import os
 from pathlib import Path
-from Agent import Agent
+from agent import Agent
 
 class TestAgent(unittest.IsolatedAsyncioTestCase):
     async def asyncSetUp(self):
