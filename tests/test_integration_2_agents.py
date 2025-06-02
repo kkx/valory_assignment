@@ -32,11 +32,10 @@ class TestTwoAgentIntegration(IsolatedAsyncioTestCase):
         self.stop_event = asyncio.Event()
 
     async def asyncTearDown(self):
-        pass
         # Clean up files
-        #for file in [self.agent1_inbox, self.agent1_outbox]:
-        #    if os.path.exists(file):
-        #        os.remove(file)
+        for file in [self.agent1_inbox, self.agent1_outbox]:
+            if os.path.exists(file):
+                os.remove(file)
 
     async def hello_counter_agent_1_handler(self, message):
         if "hello" in message.split():
